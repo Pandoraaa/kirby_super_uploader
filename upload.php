@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <title>✨ Error :( ✨</title>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
 <?php
 
 if (!empty($_FILES['files']['name'][0])){
@@ -44,6 +55,15 @@ if (!empty($_FILES['files']['name'][0])){
             $failed[$position]="[{$file_name}] l'extension de fichier '{$file_ext}' n'est pas permise.";
         }
     }
-    header('Location: index.php');
+    if(!empty($uploaded)){
+        print_r($uploaded);
+        header('Location: index.php');
+    }
+    elseif(!empty($failed)){
+        print_r($failed);
+        echo "<h2>Nooooooon ça ne marche pas!</h2><a href='index.php' class='btn btn-primary'>Revenir à l'accueil</a>";
+    }
+
+
 }
 

@@ -27,6 +27,7 @@
 </div>
 </div>
 <?php
+
 $dir ="uploads";
 $scan = array_diff(scandir($dir), array('..','.'));
 
