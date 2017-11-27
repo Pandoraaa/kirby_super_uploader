@@ -61,7 +61,12 @@ if (!empty($_FILES['files']['name'][0])){
     }
     elseif(!empty($failed)){
         print_r($failed);
-        echo "<h2>Nooooooon ça ne marche pas!</h2><a href='index.php' class='btn btn-primary'>Revenir à l'accueil</a>";
+        echo
+            "<h2 class='text-center'>Nooooooon ça ne marche pas!</h2>".
+            "</br>".
+            "<img src='https://media.giphy.com/media/7k61yuvynPn5m/giphy.gif' class='col-md-4 col-md-offset-4'>".
+            "</br>".
+            "<a href='index.php' class='btn btn-primary text-center'>Revenir à l'accueil</a>";
     }
 
 
